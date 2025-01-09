@@ -10,6 +10,7 @@
 		"source.addMissingImports": "explicit", // 保存时自动添加缺失的导入
 		"source.organizeImports": "explicit" // 保存时自动组织导入
 	},
+	"dart.flutterHotReloadOnSave": "all", // 启用 Flutter 的热重载功能
 	"workbench.colorTheme": "Bearded Theme Monokai Stone", // 设置工作区主题为 Bearded Theme Arc Blueberry
 	"editor.suggestSelection": "recentlyUsedByPrefix", // 基于最近的前缀选择建议
 	"editor.cursorBlinking": "smooth", // 设置光标闪烁为平滑模式
