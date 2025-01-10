@@ -1,88 +1,18 @@
-import 'package:flutter/material.dart';
-
 main() {
   /**
-   * 行和列
-   * 对齐方式
-   */
-  runApp(MaterialApp(
-    home: Scaffold(
-      appBar: AppBar(
-        title: Text('Expanded和Column练习'),
-      ),
-      body: HomePage(),
-    ),
-  ));
-}
-
-class HomePage extends StatelessWidget {
-  const HomePage({super.key});
-
-  @override
-  Widget build(Object context) {
-    return Container(
-      width: double.infinity,
-      color: Colors.green,
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.end,
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              // Spacer(),
-              Container(
-                // width: double.infinity,
-                width: 100,
-                height: 100,
-                color: Colors.yellow,
-              ),
-              // Spacer()
-            ],
-          ),
-          // Expanded(
-          //     // flex: 1, // 默认是1
-          //     child: Container(
-          //   color: Colors.red,
-          //   width: 50,
-          //   // height: 50, // Expanded会自动填充剩余空间，所以不需要height
-          // )),
-          Expanded(
-              child: Container(
-            color: Colors.pink,
-            child: Row(
-              children: [
-                Container(
-                  color: Colors.red,
-                  width: 50,
-                  height: 50,
-                ),
-                Container(
-                  color: Colors.yellow,
-                  width: 50,
-                  height: 50,
-                ),
-                Container(
-                  color: Colors.black,
-                  width: 50,
-                  height: 50,
-                ),
-              ],
-            ),
-          )),
-          Expanded(
-              flex: 2,
-              child: Container(
-                color: Colors.blue,
-                width: 80,
-                child: Text(
-                  'abc',
-                  style: TextStyle(fontSize: 40),
-                ),
-                // height: 50, // Expanded会自动填充剩余空间，所以不需要height
-              ))
-        ],
-      ),
-    );
-  }
+   * Container 容器
+   * 1. 填充包围子项
+   * 2. 如果宽度高度设置了值，就当作约束条件，改变包围的大小，比如设置了width: 100 , 那么宽度就是 100
+   * 
+   * 容器首先用内边距 padding 包围 child
+   * 在绘制过程中，容器应用给定的变换 transform 属性
+   * 然后绘制背景装饰 decoration
+   * 然后绘制前景装饰 foregroundDecoration
+   * 
+   * 没有子项的容器会尽可能的变大
+   * 嵌套 Container 的大小尺寸，约束的优先级，外层的大于里层的，父级 > child
+   * 如果父级没有约束，才尽可能的根据子项的约束条件来确定尺寸
+   * 
+   * 如果有对齐方式，例如居中，居左，而且父级没有约束，那么就最大化，不取子控件的尺寸
+  */
 }
