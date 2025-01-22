@@ -7,7 +7,7 @@ void main() {
   runApp(MaterialApp(
     home: Scaffold(
       appBar: AppBar(
-        title: const Text('Global Key'),
+        title: const Text('Center WidthFactor HeightFactor'),
       ),
       body: HomePage(),
     ),
@@ -23,6 +23,19 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
-    return Placeholder();
+    return Container(
+      // width: 300,
+      // height: 300,
+      color: Colors.yellow,
+      child: Center(
+        widthFactor: 2,
+        heightFactor: 2,
+        child: Container(
+          width: 100,
+          height: 100,
+          color: Colors.red,
+        ),
+      ),
+    );
   }
 }

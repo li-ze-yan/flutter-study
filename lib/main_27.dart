@@ -23,6 +23,14 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
-    return Placeholder();
+    return Container(
+      color: Colors.red,
+      width: 300,
+      height: 300,
+      padding: EdgeInsets.fromLTRB(100, 50, 50, 100),
+      child: Container(
+        color: Colors.blue,
+      ),
+    );
   }
 }
